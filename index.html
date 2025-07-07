@@ -519,11 +519,11 @@
             <span>RS Interlock Bricks</span>
         </div>
         <div class="nav-links" id="navLinks">
-            <a href="index.html"  data-page="home">Home</a>
-            <a href="about.html" data-page="about">About Us</a>
-            <a href="products.html" data-page="products">Products</a>
-            <a href="gallery.html" data-page="gallery">Gallery</a>
-            <a href="contact.html" data-page="contact">Contact</a>
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html">Products</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
         </div>
         <div class="mobile-menu" id="mobileMenu">
             <i class="fas fa-bars"></i>
@@ -548,7 +548,7 @@
         <div class="products-grid">
             <div class="product-card">
                 <div class="product-img">
-                    <img src="images/Interlocking Concrete Bricks.avif" alt="Interlock Bricks">
+                    <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Interlock Bricks">
                 </div>
                 <div class="product-info">
                     <h3>Interlock Bricks</h3>
@@ -558,20 +558,20 @@
             </div>
             <div class="product-card">
                 <div class="product-img">
-                    <img src="images/Solid Concrete Blocks.avif" alt="Paving Blocks">
+                    <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Paving Blocks">
                 </div>
                 <div class="product-info">
-                    <h3>Solid Concrete Blocks</h3>
+                    <h3>Paving Blocks</h3>
                     <p>High-strength paving blocks for driveways, walkways, and patios.</p>
                     <a href="#" class="btn">View Details</a>
                 </div>
             </div>
             <div class="product-card">
                 <div class="product-img">
-                    <img src="images/Red Clay Bricks.avif" alt="Retaining Wall Blocks">
+                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Retaining Wall Blocks">
                 </div>
                 <div class="product-info">
-                    <h3> Red Clay Bricks</h3>
+                    <h3>Retaining Wall Blocks</h3>
                     <p>Sturdy blocks for building strong and aesthetic retaining walls.</p>
                     <a href="#" class="btn">View Details</a>
                 </div>
@@ -656,7 +656,21 @@
                 </div>
                 <h3>Competitive Pricing</h3>
                 <p>High quality doesn't have to mean high prices - we offer the best value in the market.</p>
-            </div> 
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>Expert Support</h3>
+                <p>Our team provides professional advice and after-sales support for all your needs.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-hard-hat"></i>
+                </div>
+                <h3>Local Expertise</h3>
+                <p>With years of experience in Shivamogga, we understand local construction needs perfectly.</p>
+            </div>
         </div>
     </section>
     
@@ -684,13 +698,13 @@
             </div>
             <div class="footer-col">
                 <h3>Contact Info</h3>
-                <p><i class="fas fa-map-marker-alt"></i>diary, Bangalore - Honnavar Hwy, near TMAES Ayurvedic College, Shivamogga, Karnataka 577229</p>
-                <p><i class="fas fa-phone"></i>09071346665</p>
+                <p><i class="fas fa-map-marker-alt"></i> Shivamogga, Karnataka 577229</p>
+                <p><i class="fas fa-phone"></i> 090713 46665</p>
                 <p><i class="fas fa-envelope"></i> rsinterlock@gmail.com</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 RS Interlock Brick Builders. All Rights Reserved.</p>
+            <p>&copy; 2023 RS Interlock Brick Builders. All Rights Reserved.</p>
         </div>
     </footer>
     
@@ -730,41 +744,18 @@
                 }
             });
         });
-        //  // Set active link based on current page
-        //     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-        //     const navLinksAll = document.querySelectorAll('.nav-links a');
+         // Set active link based on current page
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navLinksAll = document.querySelectorAll('.nav-links a');
             
-        //     navLinksAll.forEach(link => {
-        //         const linkPage = link.getAttribute('href');
-        //         if (currentPage === linkPage) {
-        //             link.classList.add('active');
-        //         } else {
-        //             link.classList.remove('active');
-        //         }
-        //     });
-            const currentPath = window.location.pathname;
-                const pageMap = {
-                    '/': 'home',
-                    '/index.html': 'home',
-                    '/about.html': 'about',
-                    '/products.html': 'products',
-                    '/gallery.html': 'gallery',
-                    '/contact.html': 'contact'
-                };
-
-                const currentPage = pageMap[currentPath] || 'home';
-                const navLinksAll = document.querySelectorAll('.nav-links a');
-
-                navLinksAll.forEach(link => {
-                    if (link.dataset.page === currentPage) {
-                        link.classList.add('active');
-                    } else {
-                        link.classList.remove('active');
-                    }
-                });
-            
-                
+            navLinksAll.forEach(link => {
+                const linkPage = link.getAttribute('href');
+                if (currentPage === linkPage) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
     </script>
-    
 </body>
-</html>
+</html> 

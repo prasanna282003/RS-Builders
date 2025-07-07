@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -760,4 +761,768 @@
         });
     </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products | RS Interlock Brick Builders | Shivamogga</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ====== BASE STYLES ====== */
+        :root {
+            --primary: #C72E2E;   /* Brick Red */
+            --secondary: #2E4053; /* Dark Blue */
+            --accent: #E67E22;    /* Orange */
+            --dark: #1C2833;      /* Dark Gray */
+            --light: #F5F5F5;     /* Light Gray */
+            --white: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: var(--white);
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+            padding-top: 80px; /* Added to prevent content from being hidden behind fixed navbar */
+        }
+        
+        /* ====== NAVIGATION ====== */
+        nav {
+            background-color: var(--white);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            top: 0;
+            left: 0;
+        }
+        
+        nav.scrolled {
+            padding: 0.5rem 5%;
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a.active {
+            color: var(--primary);
+        }
+        
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+        
+        /* ====== PAGE HERO ====== */
+        .page-hero {
+            height: 50vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            color: var(--white);
+            margin-top: -80px;
+        }
+        
+        .page-hero-content {
+            max-width: 800px;
+        }
+        
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .breadcrumb a {
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--accent);
+        }
+        
+        .breadcrumb i {
+            margin: 0 10px;
+            font-size: 0.8rem;
+        }
+        
+        /* ====== PRODUCTS SECTION ====== */
+        .products {
+            padding: 5rem 5%;
+            background-color: var(--white);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            background-color: var(--accent);
+            bottom: -10px;
+            left: 25%;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .product-img {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .product-info .price {
+            font-size: 1.2rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .product-info p {
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+        
+        .product-specs {
+            margin-bottom: 1.5rem;
+        }
+        
+        .product-specs li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .product-specs i {
+            color: var(--accent);
+            margin-right: 10px;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* ====== PRODUCT DETAILS SECTION ====== */
+        .product-details {
+            padding: 5rem 5%;
+            background-color: var(--light);
+        }
+        
+        .details-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .details-img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .details-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .details-content h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .details-content p {
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+        
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+        }
+        
+        .specs-table tr:nth-child(even) {
+            background-color: rgba(199, 46, 46, 0.05);
+        }
+        
+        .specs-table th, .specs-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .specs-table th {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* ====== FOOTER ====== */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 3rem 5%;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--light);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-col p {
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            padding-left: 5px;
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* ====== BUTTON STYLES ====== */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        /* ====== MOBILE STYLES ====== */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+            
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                padding: 1rem 5%;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .page-hero {
+                height: 40vh;
+                margin-top: -70px;
+            }
+            
+            .page-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .details-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            /* Footer mobile styles */
+            .footer-col {
+                text-align: center;
+            }
+            
+            .footer-col h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .footer-links {
+                padding: 0;
+            }
+            
+            .footer-links a:hover {
+                padding-left: 0;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="logo">
+            <i class="fas fa-building"></i>
+            <span>RS Interlock Bricks</span>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html" class="active">Products</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+    
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <h1>Our Premium Products</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="services.html">Products</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Products Section -->
+    <section class="products">
+        <div class="section-title">
+            <h2>Our Brick Collection</h2>
+            <p>High-quality interlocking bricks for all construction needs</p>
+        </div>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Interlock Bricks">
+                </div>
+                <div class="product-info">
+                    <h3>Standard Interlock Bricks</h3>
+                    <div class="price">₹25-35 per piece</div>
+                    <p>Our flagship product - durable, weather-resistant interlocking bricks perfect for residential and commercial buildings.</p>
+                    <ul class="product-specs">
+                        <li><i class="fas fa-check"></i> Size: 230mm x 110mm x 75mm</li>
+                        <li><i class="fas fa-check"></i> Compressive Strength: 5-7 MPa</li>
+                        <li><i class="fas fa-check"></i> Water Absorption: <10%</li>
+                    </ul>
+                    <a href="#standard-interlock" class="btn">View Details</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Paving Blocks">
+                </div>
+                <div class="product-info">
+                    <h3>Paving Blocks</h3>
+                    <div class="price">₹40-60 per sq.ft</div>
+                    <p>High-strength paving blocks for driveways, walkways, and patios with various patterns and colors available.</p>
+                    <ul class="product-specs">
+                        <li><i class="fas fa-check"></i> Thickness: 60mm or 80mm</li>
+                        <li><i class="fas fa-check"></i> Compressive Strength: 8-10 MPa</li>
+                        <li><i class="fas fa-check"></i> Colors: Red, Grey, Yellow</li>
+                    </ul>
+                    <a href="#paving-blocks" class="btn">View Details</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Retaining Wall Blocks">
+                </div>
+                <div class="product-info">
+                    <h3>Retaining Wall Blocks</h3>
+                    <div class="price">₹45-65 per piece</div>
+                    <p>Sturdy interlocking blocks designed specifically for building strong and aesthetic retaining walls.</p>
+                    <ul class="product-specs">
+                        <li><i class="fas fa-check"></i> Size: 300mm x 200mm x 150mm</li>
+                        <li><i class="fas fa-check"></i> Compressive Strength: 7-9 MPa</li>
+                        <li><i class="fas fa-check"></i> Special interlocking design</li>
+                    </ul>
+                    <a href="#retaining-blocks" class="btn">View Details</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Decorative Bricks">
+                </div>
+                <div class="product-info">
+                    <h3>Decorative Bricks</h3>
+                    <div class="price">₹50-80 per piece</div>
+                    <p>Aesthetic bricks with various textures and colors for enhancing architectural beauty.</p>
+                    <ul class="product-specs">
+                        <li><i class="fas fa-check"></i> Multiple designs available</li>
+                        <li><i class="fas fa-check"></i> Weather-resistant finishes</li>
+                        <li><i class="fas fa-check"></i> Custom patterns possible</li>
+                    </ul>
+                    <a href="#decorative-bricks" class="btn">View Details</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Hollow Blocks">
+                </div>
+                <div class="product-info">
+                    <h3>Hollow Blocks</h3>
+                    <div class="price">₹30-45 per piece</div>
+                    <p>Lightweight yet strong hollow blocks for partition walls and other non-load bearing structures.</p>
+                    <ul class="product-specs">
+                        <li><i class="fas fa-check"></i> Size: 400mm x 200mm x 200mm</li>
+                        <li><i class="fas fa-check"></i> Weight: ~9 kg per block</li>
+                        <li><i class="fas fa-check"></i> Excellent thermal insulation</li>
+                    </ul>
+                    <a href="#hollow-blocks" class="btn">View Details</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Compound Wall Blocks">
+                </div>
+                <div class="product-info">
+                    <h3>Compound Wall Blocks</h3>
+                    <div class="price">₹35-50 per piece</div>
+                    <p>Specially designed blocks for quick and sturdy compound wall construction.</p>
+                    <ul class="product-specs">
+                        <li><i class="fas fa-check"></i> Size: 450mm x 150mm x 200mm</li>
+                        <li><i class="fas fa-check"></i> Pre-designed grooves for wiring</li>
+                        <li><i class="fas fa-check"></i> Easy installation</li>
+                    </ul>
+                    <a href="#compound-blocks" class="btn">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Product Details Section -->
+    <section class="product-details" id="standard-interlock">
+        <div class="details-container">
+            <div class="details-img">
+                <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Standard Interlock Bricks">
+            </div>
+            <div class="details-content">
+                <h2>Standard Interlock Bricks</h2>
+                <p>Our standard interlock bricks are manufactured using high-quality raw materials and advanced technology to ensure superior strength and durability. These bricks are perfect for all types of construction projects, from residential homes to commercial buildings.</p>
+                
+                <table class="specs-table">
+                    <tr>
+                        <th colspan="2">Technical Specifications</th>
+                    </tr>
+                    <tr>
+                        <td>Size</td>
+                        <td>230mm x 110mm x 75mm</td>
+                    </tr>
+                    <tr>
+                        <td>Compressive Strength</td>
+                        <td>5-7 MPa</td>
+                    </tr>
+                    <tr>
+                        <td>Water Absorption</td>
+                        <td>Less than 10%</td>
+                    </tr>
+                    <tr>
+                        <td>Weight</td>
+                        <td>Approx. 3.2 kg per brick</td>
+                    </tr>
+                    <tr>
+                        <td>Coverage</td>
+                        <td>Approx. 50 bricks per sq.m</td>
+                    </tr>
+                    <tr>
+                        <td>Colors Available</td>
+                        <td>Red, Grey, Brown</td>
+                    </tr>
+                </table>
+                
+                <a href="contact.html" class="btn">Get a Quote</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>About Us</h3>
+                <p>RS Interlock Brick Builders is a leading manufacturer of high-quality interlock bricks and construction materials in Shivamogga.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Shivamogga, Karnataka 577229</p>
+                <p><i class="fas fa-phone"></i> 090713 46665</p>
+                <p><i class="fas fa-envelope"></i> rsinterlock@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 RS Interlock Brick Builders. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const navLinks = document.getElementById('navLinks');
+            
+            mobileMenu.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+            
+            // Navbar scroll effect
+            window.addEventListener('scroll', () => {
+                const navbar = document.getElementById('navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+            
+            // Set active link based on current page
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navLinksAll = document.querySelectorAll('.nav-links a');
+            
+            navLinksAll.forEach(link => {
+                const linkPage = link.getAttribute('href');
+                if (currentPage === linkPage) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+>>>>>>> 7218001ad0b29e2de3991674323d72014739aa48
 </html>
